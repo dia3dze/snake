@@ -7,4 +7,5 @@ public:
   void refresh();
   void close();
   bool running();
+  void showStartMessage();
 };

@@ -18,3 +18,10 @@ void Window::close() {
 bool Window::running() {
     return !WindowShouldClose();
 }
+
+void Window::showStartMessage() {
+    int textWidth = MeasureText( START_MESSAGE, FONT_SIZE );
+    int posX = WINDOW_WIDTH / 2 - textWidth / 2;
+    int posY = WINDOW_HEIGHT / 2 - FONT_SIZE / 2;
+    DrawText( START_MESSAGE, posX, posY, FONT_SIZE, TEXT_COLOR );
+}

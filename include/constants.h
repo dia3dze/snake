@@ -12,6 +12,8 @@ constexpr int FPS = 2;
 inline const Color BACKGROUND_COLOR = Color{ 40, 40, 40, 255 };
 inline const Color SNAKE_COLOR = Color{ 254, 128, 25, 255 };
 inline const Color FOOD_COLOR = Color{ 251, 73, 52, 255 };
+inline const Color TEXT_COLOR = Color{ 255, 255, 255, 255 };
+
 // tiles
 constexpr int TILE_SIZE = 8;
 constexpr int COUNT_TILE_HORIZONTAL = WINDOW_WIDTH / TILE_SIZE;
@@ -28,3 +30,7 @@ inline std::deque<Rectangle> SNAKE_START_DEQUE = {
 constexpr int SNAKE_START_SIZE = 5;
 constexpr int SNAKE_TILE_START_POS_X = 5;
 constexpr int SNAKE_TILE_START_POS_Y = 5;
+
+// text
+constexpr char START_MESSAGE[] = "Press any button to start the game."; // size 34
+constexpr int FONT_SIZE = 20;
