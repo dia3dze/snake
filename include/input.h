@@ -16,5 +16,6 @@ private:
     {"right", { KEY_D, KEY_RIGHT }}
   };
 public:
-  bool isActionPressed(const std::string& input);
+  bool isActionDown(const std::string& input);
+  std::string getCurrentAction();
 };
