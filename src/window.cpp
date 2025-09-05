@@ -8,9 +8,7 @@ Window::Window() {
 }
 
 void Window::refresh() {
-    BeginDrawing();
     ClearBackground( BACKGROUND_COLOR );
-    EndDrawing();
 }
 
 void Window::close() {
