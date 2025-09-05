@@ -1,6 +1,7 @@
 #pragma once
 #include<raylib.h>
 #include<deque>
+#include<vector>
 
 // window
 constexpr char TITLE[] = "Snake";
