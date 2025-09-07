@@ -6,8 +6,8 @@
 
 std::random_device rd;
 std::mt19937 gen(rd());
-std::uniform_int_distribution<> randi_width(0, WINDOW_WIDTH / TILE_SIZE );
-std::uniform_int_distribution<> randi_height(0, WINDOW_HEIGHT / TILE_SIZE );
+std::uniform_int_distribution<> randi_width(0, WINDOW_WIDTH / TILE_SIZE - 1);
+std::uniform_int_distribution<> randi_height(0, WINDOW_HEIGHT / TILE_SIZE - 1);
 
 Food::Food() {
   setRandomLocation( SNAKE_START_DEQUE );  
@@ -16,8 +16,8 @@ Food::Food() {
 void Food::setRandomLocation( std::deque<Rectangle> tail) {
     bool valid = false;
     while (!valid) {
-        posX = randi_width(gen) * TILE_SIZE - TILE_SIZE;
-        posY = randi_height(gen) * TILE_SIZE - TILE_SIZE;
+        posX = randi_width(gen) * TILE_SIZE;
+        posY = randi_height(gen) * TILE_SIZE;
 
         valid = true;
         for ( auto& segment : tail) {
