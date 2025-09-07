@@ -8,4 +8,5 @@ public:
   void close();
   bool running();
   void showStartMessage();
+  void displayScore( int score );
 };

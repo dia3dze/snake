@@ -42,6 +42,7 @@ void runState() {
   snake.checkBoundries();
   BeginDrawing();
   win.refresh();
+  win.displayScore( score );
   snake.draw();
   food.draw();
   EndDrawing();

@@ -1,4 +1,5 @@
 #include<raylib.h>
+#include<string>
 #include"../include/window.h"
 #include"../include/constants.h"
 
@@ -24,4 +25,13 @@ void Window::showStartMessage() {
     int posX = WINDOW_WIDTH / 2 - textWidth / 2;
     int posY = WINDOW_HEIGHT / 2 - FONT_SIZE / 2;
     DrawText( START_MESSAGE, posX, posY, FONT_SIZE, TEXT_COLOR );
+}
+
+void Window::displayScore( int score ) {
+    DrawText(
+        ("score: " + std::to_string(score)).c_str(),
+        0, 0,
+        FONT_SIZE,
+        TEXT_COLOR
+    );
 }
