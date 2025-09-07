@@ -11,6 +11,7 @@ help:
 	@echo " "
 
 build: src/*.cpp include/*.h
+	mkdir -p bin
 	g++ -Iinclude src/*.cpp -o bin/main -lraylib
 
 launch: bin/main
