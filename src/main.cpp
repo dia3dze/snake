@@ -37,6 +37,7 @@ void runState() {
   if( foodReachable ) {
     food.setRandomLocation();
     score++;
+    snake.eatFood();
   }
   BeginDrawing();
   win.refresh();

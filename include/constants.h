@@ -7,7 +7,7 @@
 constexpr char TITLE[] = "Snake";
 constexpr int WINDOW_WIDTH = 640;
 constexpr int WINDOW_HEIGHT = 360;
-constexpr int FPS = 7;
+constexpr int FPS = 10;
 
 // colors
 inline const Color BACKGROUND_COLOR = Color{ 40, 40, 40, 255 };

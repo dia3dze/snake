@@ -42,3 +42,12 @@ bool Snake::isFoodReachable( int foodPosX, int foodPosY ) {
     return false;
   }
 }
+
+void Snake::eatFood() {
+  Rectangle head = tail.front();
+  if( nextDirection == "up" ) head.y -= TILE_SIZE;
+  if( nextDirection == "down" ) head.y += TILE_SIZE;
+  if( nextDirection == "left" ) head.x -= TILE_SIZE;
+  if( nextDirection == "right" ) head.x += TILE_SIZE;
+  tail.push_front( head );
+}
