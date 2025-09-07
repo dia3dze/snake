@@ -51,3 +51,12 @@ void Snake::eatFood() {
   if( nextDirection == "right" ) head.x += TILE_SIZE;
   tail.push_front( head );
 }
+
+void Snake::checkBoundries() {
+  for( auto& i : tail ) {
+    if( i.x > WINDOW_WIDTH ) i.x = 0;
+    if( i.x < 0 ) i.x = WINDOW_WIDTH - TILE_SIZE;
+    if( i.y > WINDOW_HEIGHT ) i.y = 0;
+    if( i.y < 0 ) i.y = WINDOW_HEIGHT - TILE_SIZE;
+  }
+}

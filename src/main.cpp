@@ -39,6 +39,7 @@ void runState() {
     score++;
     snake.eatFood();
   }
+  snake.checkBoundries();
   BeginDrawing();
   win.refresh();
   snake.draw();
