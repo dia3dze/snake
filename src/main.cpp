@@ -12,6 +12,8 @@ Snake snake;
 Input input;
 Food food;
 
+  int score = 0;
+
 int main() {
   bool game_state_run = false;
   while( win.running() ) {
@@ -31,6 +33,11 @@ int main() {
 
 void runState() {
   snake.move();
+  bool foodReachable = snake.isFoodReachable( food.getLocationX(), food.getLocationY() );
+  if( foodReachable ) {
+    food.setRandomLocation();
+    score++;
+  }
   BeginDrawing();
   win.refresh();
   snake.draw();

@@ -31,3 +31,14 @@ void Snake::move() {
   if( nextDirection == "right" ) head.x += TILE_SIZE;
   tail.push_front( head );
 }
+
+bool Snake::isFoodReachable( int foodPosX, int foodPosY ) {
+  Rectangle head = tail.front();
+  int snakePosX = head.x;
+  int snakePosY = head.y;
+  if( snakePosX == foodPosX && snakePosY == foodPosY ) {
+    return true;
+  }else {
+    return false;
+  }
+}

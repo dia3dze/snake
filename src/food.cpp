@@ -9,12 +9,20 @@ std::uniform_int_distribution<> randi_width(0, WINDOW_WIDTH / TILE_SIZE );
 std::uniform_int_distribution<> randi_height(0, WINDOW_HEIGHT / TILE_SIZE );
 
 Food::Food() {
-  getRandomLocation();  
+  setRandomLocation();  
 }
 
-void Food::getRandomLocation() {
+void Food::setRandomLocation() {
   posX = randi_width(gen) * TILE_SIZE - TILE_SIZE;
   posY = randi_height(gen) * TILE_SIZE - TILE_SIZE;
+}
+
+int Food::getLocationX() {
+  return posX;
+}
+
+int Food::getLocationY() {
+  return posY;
 }
 
 void Food::draw() {

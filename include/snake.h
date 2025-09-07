@@ -14,4 +14,6 @@ public:
   void draw();
   void changeDirection(std::string direction);
   void move();
+  bool isFoodReachable(int foodPosX, int foodPosY);
+  void eatFood();
 };

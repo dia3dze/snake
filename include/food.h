@@ -6,6 +6,8 @@ private:
   int posY;
 public:
   Food();
-  void getRandomLocation();
+  void setRandomLocation();
+  int getLocationX();
+  int getLocationY();
   void draw();
 };
