@@ -1,4 +1,5 @@
 #include<raylib.h>
+#include<deque>
 #include"../include/window.h"
 #include"../include/snake.h"
 #include"../include/input.h"
@@ -33,9 +34,10 @@ int main() {
 
 void runState() {
   snake.move();
+  std::deque<Rectangle> tail = snake.getTail();
   bool foodReachable = snake.isFoodReachable( food.getLocationX(), food.getLocationY() );
   if( foodReachable ) {
-    food.setRandomLocation();
+    food.setRandomLocation( tail );
     score++;
     snake.eatFood();
   }

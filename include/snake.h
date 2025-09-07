@@ -17,4 +17,5 @@ public:
   bool isFoodReachable(int foodPosX, int foodPosY);
   void eatFood();
   void checkBoundries();
+  std::deque<Rectangle> getTail();
 };

@@ -1,4 +1,6 @@
 #pragma once
+#include<deque>
+#include<raylib.h>
 
 class Food {
 private:
@@ -6,7 +8,7 @@ private:
   int posY;
 public:
   Food();
-  void setRandomLocation();
+  void setRandomLocation( std::deque<Rectangle> tail );
   int getLocationX();
   int getLocationY();
   void draw();
