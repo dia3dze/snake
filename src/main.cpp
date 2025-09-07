@@ -1,5 +1,6 @@
 #include<raylib.h>
 #include<deque>
+#include<iostream>
 #include"../include/window.h"
 #include"../include/snake.h"
 #include"../include/input.h"
@@ -13,12 +14,13 @@ Snake snake;
 Input input;
 Food food;
 
-  int score = 0;
+int score = 0;
+bool game_state_run = false;
+std::string direction = "";
 
 int main() {
-  bool game_state_run = false;
   while( win.running() ) {
-    std::string direction = input.getCurrentAction();
+    direction = input.getCurrentAction();
     if( direction != "" ) {
       snake.changeDirection(direction);
       game_state_run = true;
@@ -42,6 +44,12 @@ void runState() {
     snake.eatFood();
   }
   snake.checkBoundries();
+  if( snake.isDead() ) {
+    score = 0;
+    snake.reset();
+    game_state_run = false;
+    direction = "";
+  }
   BeginDrawing();
   win.refresh();
   win.displayScore( score );

@@ -16,8 +16,8 @@ Food::Food() {
 void Food::setRandomLocation( std::deque<Rectangle> tail) {
     bool valid = false;
     while (!valid) {
-        posX = randi_width(gen) * TILE_SIZE;
-        posY = randi_height(gen) * TILE_SIZE;
+        posX = randi_width(gen) * TILE_SIZE - TILE_SIZE;
+        posY = randi_height(gen) * TILE_SIZE - TILE_SIZE;
 
         valid = true;
         for ( auto& segment : tail) {

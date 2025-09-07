@@ -64,3 +64,17 @@ void Snake::checkBoundries() {
 std::deque<Rectangle> Snake::getTail() {
   return tail;
 }
+
+bool Snake::isDead() {
+  Rectangle head = tail.front();
+  for (size_t i = 1; i < tail.size(); i++) {
+      if (head.x == tail[i].x && head.y == tail[i].y) {
+          return true;
+      }
+  }
+  return false;
+}
+
+void Snake::reset() {
+  tail = SNAKE_START_DEQUE;  
+}

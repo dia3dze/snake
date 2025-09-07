@@ -18,4 +18,6 @@ public:
   void eatFood();
   void checkBoundries();
   std::deque<Rectangle> getTail();
+  bool isDead();
+  void reset();
 };
